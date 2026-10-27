@@ -9,7 +9,7 @@ Watch `reference/ask-ai-in-creatives-1080p.mp4` first. That is the bar.
 Open Claude Code (or Cursor, or Codex) in an empty folder and paste this:
 
 ```
-Clone https://github.com/lemonadolabs/motion-design-kit and read AGENTS.md. Then help me make a launch video for [feature] in [product]. I'll give you screenshots of the product.
+Clone https://github.com/lemonadolabs/motion-design-kit and read AGENTS.md. Then help me make a launch video: first ask me which app it's for and which feature I want to show, and ask me for screenshots of the product.
 ```
 
 The agent reads `AGENTS.md`, then asks what your app is, which platform it runs on (web, mobile or desktop), what the feature does, and for screenshots or a screen recording. Then it walks you through the use cases, the mood board, the storyboard, the screen rebuilds and the renders. The kit ships no images, so the agent will also find or ask for your screenshots, logo and any images the video needs (it looks in the places you point it to first, then asks for the rest in one list).
