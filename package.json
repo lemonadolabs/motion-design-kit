@@ -1,0 +1,28 @@
+{
+  "name": "motion-design-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "typecheck": "tsc --noEmit",
+    "sound": "python3 scripts/sound.py",
+    "draft": "remotion render src/index.ts Launch-silent out/launch-1080p-silent.mp4",
+    "draft:sound": "remotion render src/index.ts Launch-16x9 out/launch-1080p.mp4",
+    "draft:fast": "remotion render src/index.ts Launch-silent out/draft-half.mp4 --scale=0.5",
+    "master": "remotion render src/index.ts Launch-16x9 out/launch-4k.mp4 --scale=2"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.527",
+    "@remotion/google-fonts": "4.0.527",
+    "lucide-react": "^1.47.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.527"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}

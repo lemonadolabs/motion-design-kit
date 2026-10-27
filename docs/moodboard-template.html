@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launch Mood Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B152B;--muted:rgba(11,21,43,.55);--line:rgba(11,21,43,.1);--bg:#fcfcfc;--card:#fff;--peach:#fbefe9;--req:#d4472f;--ok:#0B152B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 16px 120px}
+h1{font-family:Manrope;font-weight:500;font-size:42px;letter-spacing:-.03em;margin:0 0 4px}
+h2{font-family:Manrope;font-weight:500;font-size:26px;letter-spacing:-.02em;margin:48px 0 6px}
+h3{font-family:Manrope;font-weight:600;font-size:17px;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 8px;max-width:820px}
+.hint{color:var(--muted);font-size:13px;margin:0 0 14px;max-width:820px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+label .q{font-weight:400;color:var(--muted)}
+label.req::after{content:" *";color:var(--req)}
+input[type=text],textarea,select{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+textarea{min-height:64px;resize:vertical}
+.missing{border-color:var(--req)!important;background:#fff6f4!important}
+.pick{position:relative;border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.pick img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.pick .cap{padding:6px 10px;font-size:13px}
+.pick.on{border-color:var(--ink)}
+.pick.on::after{content:"✓";position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:12px;background:var(--ink);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center}
+.frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.frames figure{margin:0}
+.frames img{width:100%;border-radius:8px;display:block;box-shadow:0 0 0 1px var(--line)}
+.frames figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.track{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;margin-bottom:8px}
+.track input[type=radio]{width:18px;height:18px}
+.track .name{flex:1;font-size:14px}
+.track audio{height:32px;width:320px;max-width:45vw}
+.uc{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
+.uc.chosen{box-shadow:0 0 0 2px var(--ink)}
+.uc-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.uc-head select{width:auto}
+.beat{border-left:3px solid var(--line);padding:4px 0 4px 14px;margin:14px 0}
+.beat .tag{display:inline-block;font-size:11px;font-weight:600;border-radius:6px;padding:1px 7px;margin-bottom:4px}
+.tag.white{background:#fff;border:1px solid var(--line)}
+.tag.prod{background:var(--peach)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.bar .in{max-width:1180px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bar .status{flex:1;font-size:14px}
+.status.bad{color:var(--req)}
+button{font:inherit;font-weight:600;border-radius:10px;border:1px solid var(--line);background:#fff;padding:9px 14px;cursor:pointer;color:var(--ink)}
+button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;background:#fff;cursor:pointer}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+@media (max-width:640px){.track{flex-wrap:wrap}.track audio{width:100%;max-width:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1 id="title">Launch mood board</h1>
+<p class="sub">Fill this in before anything is built. It forces the decisions that make the video work: the news, the three use cases, and <b>exactly what the viewer sees in every beat</b>. Edits save in this browser as you type. When every required field (<span style="color:var(--req)">*</span>) is filled, press <b>Export brief</b> and hand the file to whoever builds the video (person or AI agent).</p>
+<p class="hint">The reference video this follows: <code>reference/ask-ai-in-creatives-1080p.mp4</code>. Rules: <code>docs/PLAYBOOK.md</code>. Lines are at most four words. Only show what the product does today. All data is fictional and fits your app. The placeholders below show a project tool as an example; the reference film is an ads tool.</p>
+
+<h2>1. The vibe</h2>
+<p class="hint">Frames from the example film. Your video keeps this look: white world with a hairline grid, the product in a floating window, Manrope type, the brand gradient only at the end. Tick the frames you want to echo closely.</p>
+<div class="frames" id="frames"></div>
+
+<h2>2. The news</h2>
+<div class="grid2">
+  <div class="card">
+    <label class="req" for="feature">Feature name <span class="q">(internal)</span></label>
+    <input type="text" id="feature" data-key="feature" placeholder="Plan my week in Projects">
+    <label class="req" for="hook1">Hook line 1 <span class="q">(news, ≤ 4 words)</span></label>
+    <input type="text" id="hook1" data-key="hook1" data-max="4" placeholder="Planning just got">
+    <label class="req" for="hook2">Hook line 2 <span class="q">(≤ 4 words)</span></label>
+    <input type="text" id="hook2" data-key="hook2" data-max="4" placeholder="a lot faster.">
+    <label class="req" for="hookVisual">What is the "before" mess on screen? <span class="q">(what tumbles in, then snaps into order)</span></label>
+    <textarea id="hookVisual" data-key="hookVisual" placeholder="Eight task cards at odd angles, too much to look at; on 'faster.' they snap into one neat row."></textarea>
+  </div>
+  <div class="card">
+    <label class="req" for="entry">The entry point <span class="q">(the real UI element, ends "You can now ...")</span></label>
+    <input type="text" id="entry" data-key="entry" placeholder="Plan my week (the button at the top of the Projects list)">
+    <label class="req" for="place">Where it lives <span class="q">(≤ 3 words)</span></label>
+    <input type="text" id="place" data-key="place" data-max="3" placeholder="in Projects.">
+    <label class="req" for="opens">What opens when it's pressed?</label>
+    <textarea id="opens" data-key="opens" placeholder="A planning panel slides in on the right, empty, with 3 suggestions."></textarea>
+    <label class="req" for="payoff">Payoff line <span class="q">([feature] in [place], ≤ 4 words)</span></label>
+    <input type="text" id="payoff" data-key="payoff" data-max="4" placeholder="Plan my week in Projects.">
+    <label class="req" for="letter">Letter to fly into <span class="q">(in the last word; tall straight stroke: t, l, i, d, b, h)</span></label>
+    <input type="text" id="letter" data-key="letter" placeholder="t">
+  </div>
+</div>
+
+<h2>3. Use cases</h2>
+<p class="sub">Write at least five candidates, then choose the best <b>three</b> and order them simplest → most valuable. Each one must be shipped today, a job your users recognise, and show a <b>visible change</b> in the product.</p>
+<p class="hint">Can't fill five? Stop and answer the questions in <code>docs/USE-CASES.md</code> with someone who knows the feature (PM, sales, the person who built it) before going further.</p>
+<div class="grid2" id="ucs"></div>
+
+<h2>4. Beat by beat: what is on screen</h2>
+<p class="sub">For each chosen use case, decide exactly what the viewer sees. If you can't describe the change in one sentence, it won't read in two seconds.</p>
+<div id="beats"></div>
+
+<h2>5. Look</h2>
+<div class="card">
+  <label class="req" for="demo">Demo content <span class="q">(the fictional data on screen: who it belongs to and what the items are)</span></label>
+  <textarea id="demo" data-key="demo" placeholder="A made-up design studio, Northwind, with 12 tasks across 3 projects; two tasks overdue, one blocked."></textarea>
+  <p class="hint" style="margin-top:6px">One made-up company or account per film, with data that fits your app: tasks in a project tool, tracks in a music app, invoices in a finance app, messages in a chat app, workouts in a fitness app. Never real customer data.</p>
+  <label for="images">Images the film needs <span class="q">(photos, avatars, covers, thumbnails, product images; where they come from)</span></label>
+  <textarea id="images" data-key="images" placeholder="Avatars for 4 team members: generate. Project cover images: placeholder tiles for now."></textarea>
+</div>
+<div class="card" style="margin-top:16px">
+  <label class="req" for="gradient">End-card gradient <span class="q">(your brand's own gradient image, saved as public/brand/brand-gradient.jpg, 1920x1080 or larger)</span></label>
+  <input type="text" id="gradient" data-key="gradient" placeholder="Hero background from our website, framed so it's mostly the lighter colour">
+  <p class="hint" style="margin-top:6px">Use a real brand texture or photo, never a CSS gradient. A soft, light framing with one or two accent colours reads best; a framing that is mostly one strong colour was rejected on the example film.</p>
+</div>
+<div class="card" style="margin-top:16px">
+  <label class="req" for="screens">Product screens to rebuild in code <span class="q">(one per line; you'll capture each from the real app)</span></label>
+  <textarea id="screens" data-key="screens" placeholder="Projects → task list with the planning panel open&#10;Weekly summary page"></textarea>
+</div>
+
+<h2>6. Music</h2>
+<div class="card">
+  <label class="req" for="track">Music track <span class="q">(an MP3 you have the rights to use, also in ads if it will run as one; file name in public/audio/music/)</span></label>
+  <input type="text" id="track" data-key="track" placeholder="my-track.mp3 (one clear section change, steady beat)">
+  <p class="hint" style="margin-top:6px">The builder finds its beat grid and starts it so its big section change lands on "You can now". This kit ships with no music.</p>
+</div>
+
+<h2>7. Anything else</h2>
+<div class="card">
+  <label for="avoid">Things to avoid</label>
+  <textarea id="avoid" data-key="avoid" placeholder="e.g. don't show pricing; don't mention the Android version yet"></textarea>
+  <label for="notes">Notes, references, links</label>
+  <textarea id="notes" data-key="notes"></textarea>
+</div>
+</div>
+
+<div class="bar"><div class="in">
+  <div class="status" id="status">…</div>
+  <button id="import">Import brief</button>
+  <button id="reset">Reset</button>
+  <button class="primary" id="export">Export brief</button>
+  <input type="file" id="file" accept=".json" style="display:none">
+</div></div>
+
+<script>
+// ---- the builder (person or agent) can pre-fill this board by editing PREFILL ----
+const PREFILL = {};
+
+const FRAMES = [
+  ['f001.0', 'Hook: the messy pile'], ['f002.8', 'Snaps into a row'], ['f004.6', 'You can now [Ask AI]'], ['f006.8', 'Chat beside the button'],
+  ['f010.0', 'Title on white'], ['f012.4', 'Prompt box alone'], ['f016.6', 'The grid sorts itself'], ['f025.0', 'Tired ads sorted + tagged'],
+  ['f028.8', 'Pick three'], ['f035.8', 'The board builds'], ['f038.0', 'Payoff line'], ['f039.4', 'Flying into the letter'], ['f041.6', 'End card'],
+];
+const PATTERNS = ['Re-sort / re-rank', 'Filter', 'Flag / tag', 'Answer in chat', 'Build an artifact (report, playlist, invoice...)', 'State change (done, synced, sent)', 'Share / send', 'Pick items', 'Message elsewhere (Slack, email, notification)', 'Number counts up / chart draws', 'Other (describe)'];
+const N_UC = 6;
+
+const KEY = 'launch-moodboard:' + location.pathname;
+let S = {};
+try { S = JSON.parse(localStorage.getItem(KEY) || 'null') || {}; } catch (e) { S = {}; }
+if (!Object.keys(S).length) S = JSON.parse(JSON.stringify(PREFILL));
+S.ucs = S.ucs || Array.from({length: N_UC}, () => ({}));
+while (S.ucs.length < N_UC) S.ucs.push({});
+S.frames = S.frames || [];
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} validate(); };
+
+// vibe frames
+document.getElementById('frames').innerHTML = FRAMES.map(([f, c]) => `<figure class="pick ${S.frames.includes(f) ? 'on' : ''}" data-frame="${f}"><div class="cap" style="font-weight:600">${parseFloat(f.slice(1)).toFixed(1)}s in reference/ask-ai-in-creatives-1080p.mp4</div><figcaption class="cap">${c}</figcaption></figure>`).join('');
+document.querySelectorAll('[data-frame]').forEach((el) => el.onclick = () => {
+  const f = el.dataset.frame; S.frames = S.frames.includes(f) ? S.frames.filter((x) => x !== f) : [...S.frames, f]; el.classList.toggle('on'); save();
+});
+
+// use cases
+const ucBox = document.getElementById('ucs');
+const ucHTML = (i) => `
+  <div class="uc" id="uc${i}">
+    <div class="uc-head"><h3>Candidate ${i + 1}</h3>
+      <select data-uc="${i}" data-f="rank"><option value="">Not chosen</option><option value="1">Use case 1 (simplest)</option><option value="2">Use case 2</option><option value="3">Use case 3 (most valuable)</option></select></div>
+    <label>Title <span class="q">(verb + outcome, ≤ 4 words)</span></label><input type="text" data-uc="${i}" data-f="title" data-max="4" placeholder="Find blocked tasks.">
+    <label>The user's action <span class="q">(what's typed, clicked or tapped)</span></label><input type="text" data-uc="${i}" data-f="action" placeholder="What's blocking us?">
+    <label>Why the user cares</label><input type="text" data-uc="${i}" data-f="why" placeholder="Nothing slips before the deadline">
+    <label>Shipped today?</label><select data-uc="${i}" data-f="shipped"><option value="">?</option><option>Yes</option><option>No</option></select>
+  </div>`;
+ucBox.innerHTML = Array.from({length: N_UC}, (_, i) => ucHTML(i)).join('');
+
+// beats for the chosen three
+const beatsBox = document.getElementById('beats');
+const renderBeats = () => {
+  const chosen = [1, 2, 3].map((r) => S.ucs.findIndex((u) => String(u.rank) === String(r)));
+  beatsBox.innerHTML = chosen.map((ix, k) => {
+    if (ix < 0) return `<div class="card" style="margin-bottom:12px"><h3>Use case ${k + 1}</h3><p class="hint" style="margin:0">Choose a candidate as "Use case ${k + 1}" above.</p></div>`;
+    const u = S.ucs[ix]; const b = (S.beats && S.beats[k]) || {};
+    const f = (name, label, ph, req = true) => `<label class="${req ? 'req' : ''}">${label}</label><textarea data-beat="${k}" data-f="${name}" placeholder="${ph}">${b[name] || ''}</textarea>`;
+    return `<div class="card" style="margin-bottom:12px"><h3>Use case ${k + 1}: ${u.title || '(untitled)'}</h3>
+      <div class="beat"><span class="tag white">On white</span>
+        <p class="hint" style="margin:0">Title "${u.title || ''}" sharpens in, then the action alone on white${u.action ? ': "' + u.action + '"' : ''}.</p>
+        ${f('white', 'What exactly is on the white stage for the action? (prompt box, button, picker, the items lifted out...)', 'Just the input box, big and centred, typing the question.')}
+      </div>
+      <div class="beat"><span class="tag prod">Product</span>
+        ${f('screen', 'Which screen, and where does the camera start close?', 'Task list; close on the panel where the answer lands.')}
+        ${f('response', 'The response, word for word (bold result line + detail line)', '2 tasks are blocked / Both wait on design review.')}
+        <label class="req">The visible result pattern</label>
+        <select data-beat="${k}" data-f="pattern"><option value="">Pick one</option>${PATTERNS.map((p) => `<option ${b.pattern === p ? 'selected' : ''}>${p}</option>`).join('')}</select>
+        ${f('change', 'In ONE sentence: what does the viewer SEE change after the camera pulls back?', 'Every other task fades into white and the two blocked ones get a dark Blocked tag.')}
+        ${f('data', 'The data on screen that proves it (names, numbers, which item wins)', 'Homepage hero and Pricing copy, both waiting 3 days on review.')}
+        ${f('end', 'What is on screen at the last frame before the cut?', 'Faded list, two tagged tasks, answer in the panel.', false)}
+      </div></div>`;
+  }).join('');
+  beatsBox.querySelectorAll('[data-beat]').forEach((el) => {
+    const on = () => { S.beats = S.beats || [{}, {}, {}]; S.beats[el.dataset.beat] = S.beats[el.dataset.beat] || {}; S.beats[el.dataset.beat][el.dataset.f] = el.value; save(); };
+    el.oninput = on; el.onchange = on;
+  });
+};
+
+// demo content, gradient and music are plain text fields above
+
+// bind simple fields
+document.querySelectorAll('[data-key]').forEach((el) => { el.value = S[el.dataset.key] || ''; el.oninput = () => { S[el.dataset.key] = el.value; save(); }; });
+document.querySelectorAll('[data-uc]').forEach((el) => {
+  const u = S.ucs[el.dataset.uc]; el.value = u[el.dataset.f] || '';
+  const on = () => {
+    u[el.dataset.f] = el.value;
+    if (el.dataset.f === 'rank' && el.value) S.ucs.forEach((o, j) => { if (j != el.dataset.uc && String(o.rank) === el.value) o.rank = ''; });
+    document.querySelectorAll('[data-f=rank]').forEach((s) => { s.value = S.ucs[s.dataset.uc].rank || ''; document.getElementById('uc' + s.dataset.uc).classList.toggle('chosen', !!s.value); });
+    if (el.dataset.f === 'rank' || el.dataset.f === 'title' || el.dataset.f === 'action') renderBeats();
+    save();
+  };
+  el.oninput = on; el.onchange = on;
+  if (el.dataset.f === 'rank') document.getElementById('uc' + el.dataset.uc).classList.toggle('chosen', !!el.value);
+});
+renderBeats();
+
+// validation: everything required must be decided before export
+const words = (s) => (s || '').trim().split(/\s+/).filter(Boolean).length;
+function validate() {
+  const problems = [];
+  document.querySelectorAll('.missing').forEach((e) => e.classList.remove('missing'));
+  document.querySelectorAll('[data-key]').forEach((el) => {
+    const req = el.previousElementSibling && el.previousElementSibling.classList.contains('req');
+    if (req && !el.value.trim()) { el.classList.add('missing'); problems.push('fill ' + el.id); }
+    if (el.dataset.max && words(el.value) > +el.dataset.max) { el.classList.add('missing'); problems.push(el.id + ' has more than ' + el.dataset.max + ' words'); }
+  });
+  const candidates = S.ucs.filter((u) => (u.title || '').trim() && (u.action || '').trim()).length;
+  if (candidates < 5) problems.push(`write ${5 - candidates} more use-case candidate(s), or answer docs/USE-CASES.md`);
+  [1, 2, 3].forEach((r) => {
+    const u = S.ucs.find((x) => String(x.rank) === String(r));
+    if (!u) problems.push(`choose use case ${r}`);
+    else {
+      if (u.shipped !== 'Yes') problems.push(`use case ${r} must be shipped today`);
+      if (words(u.title) > 4) problems.push(`use case ${r} title is over 4 words`);
+    }
+  });
+  document.querySelectorAll('[data-uc][data-f=title]').forEach((el) => { if (words(el.value) > 4) el.classList.add('missing'); });
+  document.querySelectorAll('[data-beat]').forEach((el) => {
+    const req = el.tagName === 'SELECT' || (el.previousElementSibling && el.previousElementSibling.classList.contains('req'));
+    if (req && !el.value.trim()) { el.classList.add('missing'); problems.push('beat detail missing'); }
+  });
+  if (!(S.demo || '').trim()) problems.push('describe the demo content');
+  if (!S.gradient) problems.push('describe the end-card gradient');
+  if (!S.track) problems.push('name a music track');
+  const st = document.getElementById('status');
+  const uniq = [...new Set(problems)];
+  st.textContent = uniq.length ? `${uniq.length} decision(s) left: ${uniq.slice(0, 4).join(' · ')}${uniq.length > 4 ? ' …' : ''}` : 'Every decision made. Export the brief.';
+  st.className = 'status ' + (uniq.length ? 'bad' : '');
+  document.getElementById('title').textContent = (S.feature || 'Launch') + ' mood board';
+  return uniq;
+}
+validate();
+
+document.getElementById('export').onclick = () => {
+  const left = validate();
+  if (left.length && !confirm(left.length + ' decision(s) are still open. Export anyway as a draft?')) return;
+  const brief = {...S, exportedAt: new Date().toISOString(), complete: !left.length};
+  const text = JSON.stringify(brief, null, 2);
+  try { navigator.clipboard.writeText(text); } catch (e) {}
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], {type: 'application/json'}));
+  a.download = ((S.feature || 'launch').toLowerCase().replace(/[^a-z0-9]+/g, '-')) + '-brief.json';
+  a.click();
+};
+document.getElementById('import').onclick = () => document.getElementById('file').click();
+document.getElementById('file').onchange = (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  f.text().then((t) => { try { S = JSON.parse(t); localStorage.setItem(KEY, JSON.stringify(S)); location.reload(); } catch (err) { alert('Not a brief file'); } });
+};
+document.getElementById('reset').onclick = () => { if (confirm('Clear this board?')) { try { localStorage.removeItem(KEY); } catch (e) {} location.reload(); } };
+</script>
+</body>
+</html>

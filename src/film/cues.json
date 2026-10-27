@@ -1,0 +1,392 @@
+{
+ "_note": "Every time in the film, in film seconds: the single source for picture (src/film/timeline.ts) and sound (scripts/sound.py). Cuts sit on the music's beat grid (beat = seconds per beat; film 3.000 = the track's section downbeat, set with music.offset). Change times here, never in the scene code.",
+ "duration": 42.5,
+ "beat": 0.7502,
+ "music": {
+  "file": "your-track.mp3",
+  "offset": 8.998,
+  "fadeOut": [
+   40.9,
+   42.5
+  ]
+ },
+ "scenes": {
+  "hook": [
+   0,
+   3.0
+  ],
+  "intro": [
+   3.0,
+   9.001
+  ],
+  "title1": [
+   9.001,
+   11.252
+  ],
+  "prompt1": [
+   11.252,
+   13.503
+  ],
+  "p1": [
+   13.503,
+   17.254
+  ],
+  "title2": [
+   17.254,
+   19.505
+  ],
+  "prompt2": [
+   19.505,
+   21.756
+  ],
+  "p2": [
+   21.756,
+   25.507
+  ],
+  "title3": [
+   25.507,
+   27.758
+  ],
+  "pick": [
+   27.758,
+   30.009
+  ],
+  "prompt3": [
+   30.009,
+   32.26
+  ],
+  "p3": [
+   32.26,
+   36.761
+  ],
+  "payoff": [
+   36.761,
+   39.762
+  ],
+  "end": [
+   39.762,
+   42.5
+  ]
+ },
+ "hook": {
+  "cards": [
+   0.0,
+   0.19,
+   0.38,
+   0.56,
+   0.75,
+   0.94
+  ],
+  "line1": [
+   [
+    "Creatives",
+    0.3
+   ],
+   [
+    "just",
+    0.55
+   ],
+   [
+    "got",
+    0.75
+   ]
+  ],
+  "line1Out": 1.36,
+  "line2": [
+   [
+    "a",
+    1.5
+   ],
+   [
+    "whole",
+    1.62
+   ],
+   [
+    "lot",
+    1.8
+   ],
+   [
+    "simpler.",
+    2.25
+   ]
+  ],
+  "snap": 2.25,
+  "dim": 2.62,
+  "exit": 2.86
+ },
+ "intro": {
+  "words": [
+   [
+    "You",
+    3.1
+   ],
+   [
+    "can",
+    3.3
+   ],
+   [
+    "now",
+    3.5
+   ]
+  ],
+  "btn": 3.72,
+  "pan": [
+   4.12,
+   1.05
+  ],
+  "words2": [
+   [
+    "in",
+    4.42
+   ],
+   [
+    "Creatives.",
+    4.62
+   ]
+  ],
+  "cursor": [
+   4.95,
+   5.55
+  ],
+  "press": 5.64,
+  "textOut": [
+   5.95,
+   0.42
+  ],
+  "move1": [
+   5.95,
+   1.1
+  ],
+  "panel": [
+   6.15,
+   0.8
+  ],
+  "iface": [
+   7.0,
+   0.75
+  ],
+  "move2": [
+   7.45,
+   1.15
+  ]
+ },
+ "titles": {
+  "title1": {
+   "words": [
+    [
+     "Find",
+     0.12
+    ],
+    [
+     "your",
+     0.3
+    ],
+    [
+     "winners.",
+     0.48
+    ]
+   ]
+  },
+  "title2": {
+   "words": [
+    [
+     "Spot",
+     0.12
+    ],
+    [
+     "tired",
+     0.3
+    ],
+    [
+     "ads.",
+     0.48
+    ]
+   ]
+  },
+  "title3": {
+   "words": [
+    [
+     "Send",
+     0.12
+    ],
+    [
+     "clients",
+     0.28
+    ],
+    [
+     "a",
+     0.46
+    ],
+    [
+     "board.",
+     0.58
+    ]
+   ]
+  }
+ },
+ "prompts": {
+  "prompt1": {
+   "text": "Show my best video hooks",
+   "type": [
+    0.38,
+    1.42
+   ],
+   "send": 1.58,
+   "exit": 1.98
+  },
+  "prompt2": {
+   "text": "Any ads getting tired?",
+   "type": [
+    0.38,
+    1.36
+   ],
+   "send": 1.58,
+   "exit": 1.98
+  },
+  "prompt3": {
+   "text": "Make a board for my client",
+   "type": [
+    0.4,
+    1.46
+   ],
+   "send": 1.62,
+   "exit": 1.98
+  }
+ },
+ "p1": {
+  "bubble": 13.55,
+  "ans": [
+   13.73,
+   13.83,
+   13.91,
+   13.99
+  ],
+  "pull": [
+   14.7,
+   0.9
+  ],
+  "chips": 15.65,
+  "out": 15.67,
+  "move": 15.73,
+  "ring": 16.5
+ },
+ "p2": {
+  "bubble": 21.8,
+  "ans": [
+   21.98,
+   22.08,
+   22.17
+  ],
+  "pull": [
+   22.8,
+   0.9
+  ],
+  "chips": 23.75,
+  "veil": 23.75,
+  "move": 23.8,
+  "tags": [
+   24.47,
+   24.55
+  ]
+ },
+ "pick": {
+  "cards": [
+   27.78,
+   27.84,
+   27.9
+  ],
+  "cursor": 28.05,
+  "clicks": [
+   28.45,
+   28.85,
+   29.25
+  ],
+  "exit": 29.72
+ },
+ "p3": {
+  "bubble": 32.3,
+  "building": 32.48,
+  "ready": 32.95,
+  "pull": [
+   33.22,
+   0.9
+  ],
+  "close": [
+   34.18,
+   0.7
+  ],
+  "gridOut": 34.18,
+  "board": 34.3,
+  "cols": [
+   34.42,
+   34.49,
+   34.56
+  ],
+  "curves": [
+   34.65,
+   0.8
+  ],
+  "cursor": [
+   35.32,
+   35.82
+  ],
+  "share": 35.9,
+  "toast": 35.98
+ },
+ "payoff": {
+  "words": [
+   [
+    "Ask",
+    36.86
+   ],
+   [
+    "AI",
+    37.0
+   ],
+   [
+    "in",
+    37.14
+   ],
+   [
+    "Creatives.",
+    37.28
+   ]
+  ],
+  "zoom": [
+   38.412,
+   1.35
+  ]
+ },
+ "end": {
+  "logo": 39.762
+ },
+ "blend": {
+  "windows": [
+   [
+    2.86,
+    3.0
+   ],
+   [
+    15.73,
+    16.25
+   ],
+   [
+    23.8,
+    24.35
+   ],
+   [
+    29.72,
+    30.009
+   ],
+   [
+    34.18,
+    34.6
+   ],
+   [
+    39.112,
+    39.762,
+    2
+   ]
+  ]
+ }
+}
